@@ -6,9 +6,8 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
   vb.gui = true
   vb.memory = "1024"
+  vb.cpu = "1"
   config.vm.provision "shell", inline: <<-SHELL
-  apt-get update
-  apt-get install -y nginx
   SHELL
 end
 end
