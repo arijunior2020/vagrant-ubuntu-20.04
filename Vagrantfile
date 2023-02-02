@@ -9,5 +9,8 @@ Vagrant.configure("2") do |config|
   vb.cpus = "1"
   config.vm.provision "shell", path: "script.sh"
   config.vm.synced_folder "site/" , "/var/www/html"
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+  end
 end
 end
